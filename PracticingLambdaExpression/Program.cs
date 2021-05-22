@@ -11,6 +11,7 @@ namespace PracticingLambdaExpression
             Console.WriteLine("Lambda Expression");
             List<Person> listPersonInCity = new List<Person>();
             AddRecords(listPersonInCity);
+            Retriveing_TopTwoRecord_ForAgels_LessThanSixty(listPersonInCity);
         }
         private static void AddRecords(List<Person> listPersonInCity)
         {
@@ -26,7 +27,13 @@ namespace PracticingLambdaExpression
 
             Console.WriteLine(listPersonInCity.ToString());
             listPersonInCity.ForEach(x => Console.WriteLine("{0}\t",x.Name.ToString()));
-
+        }
+        private static void Retriveing_TopTwoRecord_ForAgels_LessThanSixty(List<Person> listPersonInCity)
+        {
+            foreach (Person person in listPersonInCity.FindAll(e => (e.Age < 60)).Take(2).ToList())
+            {
+                Console.WriteLine("Name :" + person.Name + "\t\tAge");
+            }
         }
     }
        
