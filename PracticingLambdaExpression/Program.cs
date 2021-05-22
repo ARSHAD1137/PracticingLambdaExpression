@@ -13,6 +13,8 @@ namespace PracticingLambdaExpression
             AddRecords(listPersonInCity);
             Retriveing_TopTwoRecord_ForAgels_LessThanSixty(listPersonInCity);
             ChechkingForTeenagerPerson(listPersonInCity);
+            AllPersonsAverageAge(listPersonInCity);
+            SpecificPersonName(listPersonInCity);
         }
         private static void AddRecords(List<Person> listPersonInCity)
         {
@@ -44,6 +46,25 @@ namespace PracticingLambdaExpression
             }
             else
                 Console.WriteLine("No, we don't have teen-ager in the list");
+        }
+        private static void AllPersonsAverageAge(List<Person> listPersonInCity)
+        {
+            var avgage = listPersonInCity.Average(e => e.Age);
+
+            Console.WriteLine("Average In Person Data:" + avgage);
+        }
+        private static void SpecificPersonName(List<Person> listPersonInCity)
+        {
+            Console.WriteLine("Enter Person Name:");
+            string personName = Console.ReadLine();
+            if (listPersonInCity.Exists(e => e.Name.Equals(personName)))
+            {
+                Console.WriteLine(personName+ "" + "Exist in list");
+            }
+            else
+            {
+                Console.WriteLine(personName+ "" + " Not exist in list");
+            }
         }
     }
        
