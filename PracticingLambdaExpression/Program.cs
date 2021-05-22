@@ -8,7 +8,9 @@ namespace PracticingLambdaExpression
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Lambda Expression");
             List<Person> listPersonInCity = new List<Person>();
+            AddRecords(listPersonInCity);
         }
         private static void AddRecords(List<Person> listPersonInCity)
         {
@@ -21,26 +23,11 @@ namespace PracticingLambdaExpression
             listPersonInCity.Add(new Person("203456882", "Winston", "1208 Alex st, Newyork,NY", 65));
             listPersonInCity.Add(new Person("203456883", "Mac", "126 Province Ave, Baltimore,NY", 85));
             listPersonInCity.Add(new Person("203456884", "SAM", "126 Province Ave, Baltimore,NY", 95));
-            // Console.WriteLine(listPersonInCity.ToString());
-            // listPersonInCity.ForEach(x => Console.WriteLine("{0}\t",x.Name.ToString()));
+
+            Console.WriteLine(listPersonInCity.ToString());
+            listPersonInCity.ForEach(x => Console.WriteLine("{0}\t",x.Name.ToString()));
 
         }
-        private static void  Retriveing_TopTwoRecord_ForAgels_LessThanSixty(List<Person> listPersonInCity)
-        {
-            foreach (Person person in listPersonInCity.FindAll(e=>(e.Age<60)).Take(2).ToList())
-            {
-                Console.WriteLine("Name :" + person.Name + "\t\tAge");
-            }
-        }
-        private static void ChechkingForTeenagerPerson(List<Person> listPersonInCity)
-        {
-            if (listPersonInCity.Any(e => e.Age >= 13 && e.Age < 19))
-            {
-                Console.WriteLine("Yes, we have some teen-agers in the list");
-            }
-            else
-                Console.WriteLine("No, we don't have teen-ager in the list");
-        }
-
     }
+       
 }
