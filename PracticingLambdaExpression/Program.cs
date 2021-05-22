@@ -16,6 +16,7 @@ namespace PracticingLambdaExpression
             AllPersonsAverageAge(listPersonInCity);
             SpecificPersonName(listPersonInCity);
             Skip_Person_Age_LessThanSixty(listPersonInCity);
+            Remove_Person(listPersonInCity);
         }
         private static void AddRecords(List<Person> listPersonInCity)
         {
@@ -73,6 +74,13 @@ namespace PracticingLambdaExpression
            {
               Console.WriteLine("Name : " + person.Name + " \t\tAge" );
            }
+        }
+        private static void Remove_Person(List<Person> listPersonInCity)
+        {
+            Console.WriteLine("Enter Person Name:");
+            string personName = Console.ReadLine();
+            listPersonInCity.RemoveAll(e => (e.Name == personName));
+            
         }
     }
        
