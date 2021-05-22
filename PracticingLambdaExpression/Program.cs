@@ -15,6 +15,7 @@ namespace PracticingLambdaExpression
             ChechkingForTeenagerPerson(listPersonInCity);
             AllPersonsAverageAge(listPersonInCity);
             SpecificPersonName(listPersonInCity);
+            Skip_Person_Age_LessThanSixty(listPersonInCity);
         }
         private static void AddRecords(List<Person> listPersonInCity)
         {
@@ -65,6 +66,13 @@ namespace PracticingLambdaExpression
             {
                 Console.WriteLine(personName+ "" + " Not exist in list");
             }
+        }
+        private static void Skip_Person_Age_LessThanSixty(List<Person> listPersonInCity)
+        {
+           foreach(Person person in listPersonInCity.SkipWhile(e => e.Age < 60))
+           {
+              Console.WriteLine("Name : " + person.Name + " \t\tAge" );
+           }
         }
     }
        
